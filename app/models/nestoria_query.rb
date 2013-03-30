@@ -1,10 +1,9 @@
 class NestoriaQuery
+  require 'json'
   require 'net/http'
   include HttpParamsGet
   include ActiveModel::Validations
   include ActiveModel::Conversion
-  #extend ActiveModel::Naming
-  
 
   attr_accessor :encoding, :listing_type, :place_name, :price_min, :price_max, :bedroom_min, :bedroom_max, :has_photo,
                 :number_of_results, :page, :country, :pretty, :action
@@ -29,7 +28,7 @@ class NestoriaQuery
     path='/api'
     hash=to_hash()
     uri = URI(buildgetrequest(domain, path, hash))
-    return Net::HTTP.get(uri)
+    result = JSON.parse(Net::HTTP.get(uri))
   end
 
   def to_hash

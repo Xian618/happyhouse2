@@ -1,4 +1,6 @@
 class QueriesController < ApplicationController
+  require 'json'
+
   # GET /queries
   # GET /queries.json
   def index
@@ -10,11 +12,13 @@ class QueriesController < ApplicationController
     end
   end
 
+
   # POST /queries
   # POST /queries.json
   def create
     @query = Query.new(params[:query])
     @nestoria_query = NestoriaQuery.new(@query)
-    render :text => @nestoria_query.search()
+    res = @nestoria_query.search()
+    render :json => JSON.pretty_generate(res)
   end
 end
