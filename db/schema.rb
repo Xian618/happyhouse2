@@ -11,21 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130330161912) do
-
-  create_table "nestoria_queries", :force => true do |t|
-    t.string   "encoding"
-    t.string   "listing_type"
-    t.string   "place_name"
-    t.integer  "price_min"
-    t.integer  "price_max"
-    t.integer  "bedroom_min"
-    t.integer  "bedroom_max"
-    t.boolean  "has_photo"
-    t.integer  "number_of_results"
-    t.integer  "page"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
+ActiveRecord::Schema.define(:version => 0) do
 
 end

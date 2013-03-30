@@ -1,0 +1,31 @@
+<h1>Listing queries</h1>
+
+<table>
+  <tr>
+    <th>Place name</th>
+    <th>Price min</th>
+    <th>Price max</th>
+    <th>Bedroom min</th>
+    <th>Bedroom max</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @queries.each do |query| %>
+  <tr>
+    <td><%= query.place_name %></td>
+    <td><%= query.price_min %></td>
+    <td><%= query.price_max %></td>
+    <td><%= query.bedroom_min %></td>
+    <td><%= query.bedroom_max %></td>
+    <td><%= link_to 'Show', query %></td>
+    <td><%= link_to 'Edit', edit_query_path(query) %></td>
+    <td><%= link_to 'Destroy', query, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Query', new_query_path %>

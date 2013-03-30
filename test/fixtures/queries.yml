@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  place_name: MyString
+  price_min: MyString
+  price_max: MyString
+  bedroom_min: MyString
+  bedroom_max: MyString
+
+two:
+  place_name: MyString
+  price_min: MyString
+  price_max: MyString
+  bedroom_min: MyString
+  bedroom_max: MyString
