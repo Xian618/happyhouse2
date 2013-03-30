@@ -2,23 +2,20 @@ class QueriesController < ApplicationController
   require 'json'
 
   # GET /queries
-  # GET /queries.json
   def index
     @query = Query.new
+  end
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @query }
+  # POST /queries
+  def create
+    @query = Query.new(params[:query])
+    if(@query.valid?)
+      @nestoria_query = NestoriaQuery.new(@query)
+      res = @nestoria_query.search()
+      render :json => JSON.pretty_generate(res)
+    else
+      render action: "index"
     end
   end
 
-
-  # POST /queries
-  # POST /queries.json
-  def create
-    @query = Query.new(params[:query])
-    @nestoria_query = NestoriaQuery.new(@query)
-    res = @nestoria_query.search()
-    render :json => JSON.pretty_generate(res)
-  end
 end
