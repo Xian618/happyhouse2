@@ -13,8 +13,7 @@ class QueriesController < ApplicationController
   # POST /queries
   # POST /queries.json
   def create
-    @query = Query.new()
-    #params[:query]
+    @query = Query.new(params[:query])
     @nestoria_query = NestoriaQuery.new(@query)
     render :text => @nestoria_query.search()
   end
