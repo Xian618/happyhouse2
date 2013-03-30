@@ -1,0 +1,41 @@
+<h1>Listing nestoria_queries</h1>
+
+<table>
+  <tr>
+    <th>Encoding</th>
+    <th>Listing type</th>
+    <th>Place name</th>
+    <th>Price min</th>
+    <th>Price max</th>
+    <th>Bedroom min</th>
+    <th>Bedroom max</th>
+    <th>Has photo</th>
+    <th>Number of results</th>
+    <th>Page</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @nestoria_queries.each do |nestoria_query| %>
+  <tr>
+    <td><%= nestoria_query.encoding %></td>
+    <td><%= nestoria_query.listing_type %></td>
+    <td><%= nestoria_query.place_name %></td>
+    <td><%= nestoria_query.price_min %></td>
+    <td><%= nestoria_query.price_max %></td>
+    <td><%= nestoria_query.bedroom_min %></td>
+    <td><%= nestoria_query.bedroom_max %></td>
+    <td><%= nestoria_query.has_photo %></td>
+    <td><%= nestoria_query.number_of_results %></td>
+    <td><%= nestoria_query.page %></td>
+    <td><%= link_to 'Show', nestoria_query %></td>
+    <td><%= link_to 'Edit', edit_nestoria_query_path(nestoria_query) %></td>
+    <td><%= link_to 'Destroy', nestoria_query, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Nestoria query', new_nestoria_query_path %>

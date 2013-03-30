@@ -1,0 +1,2 @@
+module NestoriaQueriesHelper
+end

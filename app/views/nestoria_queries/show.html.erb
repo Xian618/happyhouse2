@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Encoding:</b>
+  <%= @nestoria_query.encoding %>
+</p>
+
+<p>
+  <b>Listing type:</b>
+  <%= @nestoria_query.listing_type %>
+</p>
+
+<p>
+  <b>Place name:</b>
+  <%= @nestoria_query.place_name %>
+</p>
+
+<p>
+  <b>Price min:</b>
+  <%= @nestoria_query.price_min %>
+</p>
+
+<p>
+  <b>Price max:</b>
+  <%= @nestoria_query.price_max %>
+</p>
+
+<p>
+  <b>Bedroom min:</b>
+  <%= @nestoria_query.bedroom_min %>
+</p>
+
+<p>
+  <b>Bedroom max:</b>
+  <%= @nestoria_query.bedroom_max %>
+</p>
+
+<p>
+  <b>Has photo:</b>
+  <%= @nestoria_query.has_photo %>
+</p>
+
+<p>
+  <b>Number of results:</b>
+  <%= @nestoria_query.number_of_results %>
+</p>
+
+<p>
+  <b>Page:</b>
+  <%= @nestoria_query.page %>
+</p>
+
+
+<%= link_to 'Edit', edit_nestoria_query_path(@nestoria_query) %> |
+<%= link_to 'Back', nestoria_queries_path %>

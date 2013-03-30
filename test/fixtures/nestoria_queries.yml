@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  encoding: MyString
+  listing_type: MyString
+  place_name: MyString
+  price_min: 
+  price_max: 
+  bedroom_min: 
+  bedroom_max: 
+  has_photo: false
+  number_of_results: 
+  page: 
+
+two:
+  encoding: MyString
+  listing_type: MyString
+  place_name: MyString
+  price_min: 
+  price_max: 
+  bedroom_min: 
+  bedroom_max: 
+  has_photo: false
+  number_of_results: 
+  page: 
