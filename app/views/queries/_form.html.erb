@@ -1,4 +1,4 @@
-<%= form_for(@query) do |f| %>
+<%= simple_form_for(@query) do |f| %>
   <% if @query.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@query.errors.count, "error") %> prohibited this query from being saved:</h2>
@@ -32,6 +32,6 @@
     <%= f.text_field :bedroom_max %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, :class => 'btn-primary' %>
   </div>
 <% end %>
