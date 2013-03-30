@@ -25,13 +25,7 @@ class NestoriaQuery
     domain='http://api.nestoria.co.uk'
     path='/api'
     hash=to_hash()
-    Rails.logger.debug("hash follows:")
-    Rails.logger.debug(hash)
-    Rails.logger.debug("hash ends")
     return http_get(domain, path, hash)
-
-
-
 
 	#url_string='http://api.nestoria.co.uk/api?country=uk&pretty=1&action=search_listings'
 	#url_string << '&encoding=' << @encoding
@@ -48,7 +42,9 @@ class NestoriaQuery
 
   def to_hash
     hash = {}; 
-    self.instance_variables.each { |k,v| hash[k] = v }
+    self.instance_variables.each { |k|
+      hash[k] = instance_variable_get(k)
+    }
     return hash
   end
 
