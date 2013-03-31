@@ -29,7 +29,7 @@ class NestoriaQuery
     path='/api'
     hash=to_hash()
     uri = URI(buildgetrequest(domain, path, hash))
-    result = JSON.parse(Net::HTTP.get(uri))
+    return JSON.parse(Net::HTTP.get(uri))
   end
 
   def to_hash
@@ -41,7 +41,7 @@ class NestoriaQuery
   end
 
   def persisted?
-    false
+    return false
   end
 
 end
