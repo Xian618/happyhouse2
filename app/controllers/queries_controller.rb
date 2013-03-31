@@ -10,13 +10,15 @@ class QueriesController < ApplicationController
   def create
     @query = Query.new(params[:query])
     if(@query.valid?)
-      search_nestoria(@query)
+      search_datagov(@query)
+      #search_nestoria(@query)
     else
       render action: "index"
     end
   end
 
   private
+
   def search_nestoria(query)
     nestoria_query = NestoriaQuery.new(query)
     res = nestoria_query.search()
@@ -28,4 +30,9 @@ class QueriesController < ApplicationController
     end
   end
 
+  def search_datagov(query)
+    datagov_query=DataGovQuery.new(query)
+    res = datagov_query.search()
+    render :json => JSON.pretty_generate(res)
+  end
 end
