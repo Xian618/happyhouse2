@@ -12,10 +12,10 @@ class QueriesController < ApplicationController
     if(@query.valid?)
       @nestoria_query = NestoriaQuery.new(@query)
       res = @nestoria_query.search()
-      if(res['response']['response_action_code'] == 100)
+      if(res['response']['application_response_code'].to_i < 200)
         render :json => JSON.pretty_generate(res)
       else
-        @query.errors.add("place_name", "Place name is not specific enough")
+        @query.errors.add("place_name", "Place name is ambiguous or misspelled")
         render action: "index"
       end
     else
