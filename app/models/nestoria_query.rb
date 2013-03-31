@@ -1,6 +1,7 @@
 class NestoriaQuery
   require 'json'
   require 'net/http'
+  include AttributeHash
   include HttpParamsGet
   include ActiveModel::Validations
   include ActiveModel::Conversion
@@ -30,14 +31,6 @@ class NestoriaQuery
     hash=to_hash()
     uri = URI(buildgetrequest(domain, path, hash))
     return JSON.parse(Net::HTTP.get(uri))
-  end
-
-  def to_hash
-    hash = {}; 
-    self.instance_variables.each { |k|
-      hash[k] = instance_variable_get(k)
-    }
-    return hash
   end
 
   def persisted?
