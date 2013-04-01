@@ -1,5 +1,6 @@
 HappyhouseV2::Application.routes.draw do
   resources :queries
+  match "result" => "queries#results"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
