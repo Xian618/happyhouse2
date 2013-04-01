@@ -20,8 +20,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Javascript
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 4.0.2'
+
+# Styling
 gem 'bootstrap-sass'
 gem 'simple_form'
 

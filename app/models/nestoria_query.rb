@@ -7,7 +7,7 @@ class NestoriaQuery
   include ActiveModel::Conversion
 
   attr_accessor :encoding, :listing_type, :place_name, :price_min, :price_max, :bedroom_min, :bedroom_max, :has_photo,
-                :number_of_results, :page, :country, :pretty, :action, :listing_type
+                :number_of_results, :page, :country, :pretty, :action, :listing_type, :total_pages
 
   def initialize(query)
   	@encoding='json'
@@ -23,6 +23,7 @@ class NestoriaQuery
     @pretty=1
     @action='search_listings'
     @listing_type='rent'
+    @total_pages=1
   end
 
   def search

@@ -1,6 +1,8 @@
 HappyhouseV2::Application.routes.draw do
   resources :queries
   match "result" => "queries#results"
+  match "next_page" => "queries#next_page_of_results"
+  match "previous_page" => "queries#previous_page_of_results"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
